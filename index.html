@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eerste pagina</title>
+    <style>
+        span {
+            color:red;
+            font-size: 25px;
+            border: 5px solid black;
+        }
+        p {
+            color:purple;
+            font-size: 50px;
+            border: 10px solid black;
+        }
+        .class1 {
+            color:blue;
+            font-size: 24px;
+            border: none;
+        }
+        .class2 {
+            color: default;
+            font-size: default;
+            border: none;
+        }
+        #table1 {
+            border: 5px dashed aqua;
+        }
+        #paragraph1 {
+            color: default;
+            font-size: default;
+            border: none;
+        }
+    </style>
+    <script>
+        var a = 12;
+        var b = 'Text';
+        var c = true;
+
+        //Test functions
+        function myFunctionA() {
+            document.getElementById("varA").innerHTML = a;
+            }
+        function myFunctionB() {
+            document.getElementById("varB").innerHTML = b;
+            }
+        function myFunctionC() {
+            document.getElementById("varC").innerHTML = c;
+            }
+            
+    </script>
+</head>
+<body onload="myFunctionA();myFunctionB();myFunctionC()">
+
+    <p>Eerste paragraaf</p>
+    <span>Eerste tekst</span>
+
+    <p class="class1">Tweede paragraaf</p>
+    <span>Tweede tekst</span>
+
+    <p>Image paragraaf</p>
+    <img style="border: 10px solid green;" src="working_talent_bv_logo.jpg">
+
+    <p>Link paragraaf</p>
+    <a href="https://www.workingtalent.nl/">Link tekst</a>
+
+    <p>Table paragraaf</p>
+    <table id="table1">
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+            <td>Cell 3</td>
+        </tr>
+        <tr>
+            <td>Cell 4</td>
+            <td>Cell 5</td>
+            <td>Cell 6</td>
+        </tr>
+        <tr>
+            <td>Cell 7</td>
+            <td>Cell 8</td>
+            <td>Cell 9</td>
+        </tr>
+    </table>
+
+    <button type="button" onclick=" makeTextBigger();">
+        Make paragraph bigger.
+    </button>
+
+    <br>
+
+    <button type="button" onclick="makeTextSmaller();">
+        Make paragraph smaller.
+    </button>
+
+    <br>
+
+    <button type="button" onclick="changeTextSize();">
+        Change paragraph size.
+    </button>
+
+    <br>
+
+    <input type="text" id="new-color">
+
+    <button type="button" onclick="readColor();">
+        Change Table Background Color.
+    </button>
+
+    <p id="paragraph1">Javascript paragraaf</p>
+    <h1>The value for number is: <span class="class2" id="varA"></span></h1>
+    <h1>The value for text   is: <span class="class2" id="varB"></span></h1>
+    <h1>The value for bool   is: <span class="class2" id="varC"></span></h1>
+
+    <script>
+        function test(){
+            alert('Test is aangeroepen.');
+            document.getElementById('table1').style.backgroundColor = 'purple';
+        }
+        //test();
+
+        function makeTextBigger(){
+            document.getElementById('paragraph1').style.fontSize = '60px';
+        }
+
+        function makeTextSmaller(){
+            document.getElementById('paragraph1').style.fontSize = '50px';
+        }
+        
+        function changeTextSize(){
+            if (document.getElementById('paragraph1').style.fontSize < '60px'){
+                document.getElementById('paragraph1').style.fontSize = '60px'
+            }
+            else{
+                document.getElementById('paragraph1').style.fontSize = '50px';
+            }
+
+        }
+
+        function changeColor(newColor){
+            document.getElementById('table1').style.backgroundColor = newColor;
+        }
+
+        function readColor(){
+            let color = document.getElementById("new-color").value
+            changeColor(color)
+        }
+
+        
+    </script>
+
+</body>
+</html>
